@@ -1,2 +1,4 @@
 sctl/say
 .idea/*
+certManager/certManager/certmanager
+certManager/generate/generate_token
