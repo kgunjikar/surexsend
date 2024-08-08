@@ -46,5 +46,5 @@ vault write pki/roles/example-dot-com \
 
 Curl command to request a certificate with the generated token
 ```bash
-curl -X POST -H "Authorization: Bearer YOUR_JWT_TOKEN" -H "Content-Type: application/json" -d '{"common_name": "test.example.com"}' http://localhost:8080/request_cert
+curl -X POST -H "Authorization: Bearer YOUR_JWT_TOKEN" -H "Content-Type: application/json" -d '{"common_name": "test.surexsend.com"}' http://192.168.0.199:8080/request_cert
 ```
