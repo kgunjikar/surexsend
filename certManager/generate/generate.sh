@@ -6,6 +6,7 @@ export VAULT_TOKEN='root'
 
 # Generate JWT token
 JWT_TOKEN=$(go run generate_token.go | grep "Generated Token:" | awk '{print $3}')
+echo $JWT_TOKEN
 
 # Check if JWT token generation was successful
 if [ -z "$JWT_TOKEN" ]; then

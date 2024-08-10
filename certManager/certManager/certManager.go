@@ -153,6 +153,7 @@ func validateToken(tokenString string) (*jwt.Token, error) {
 }
 
 func requestCertHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Received request")
 	authHeader := r.Header.Get("Authorization")
 	if authHeader == "" {
 		http.Error(w, "authorization header required", http.StatusUnauthorized)
@@ -192,7 +193,7 @@ func requestCertHandler(w http.ResponseWriter, r *http.Request) {
 		"ttl":         "24h",
 	}
 
-	secret, err := client.Logical().Write("pki/issue/example-dot-com", data)
+	secret, err := client.Logical().Write("pki/issue/surexsend-dot-com", data)
 	if err != nil {
 		http.Error(w, "failed to request certificate", http.StatusInternalServerError)
 		return
